@@ -50,7 +50,6 @@ public class RestaurantServiceImpl implements RestaurantService {
         restaurant.setImage(restaurantRequest.getImage());
         restaurant.setIntroduction(restaurantRequest.getIntroduction());
         restaurant.setPromotion(restaurantRequest.getPromotion());
-
         restaurantRepository.save(restaurant);
 
         return adminId + " add restaurant detail information success !";
