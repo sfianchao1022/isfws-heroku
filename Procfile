@@ -1,1 +1,1 @@
-web: java -jar target/accessing-data-mysql-0.0.1-SNAPSHOT.jar --server.port=$PORT
+web: java -jar target/cuisine-0.0.1-SNAPSHOT.jar --server.port=$PORT
