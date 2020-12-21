@@ -35,7 +35,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 
         if (ownerOptional.isPresent()){
             Owner owner = ownerOptional.get();
-            System.out.println(owner.getId());
+            System.out.println("owner id is " + owner.getId());
             restaurant.setOwnerId(owner);
         } else {
             System.out.println("owner : " + adminId + " not found !");
