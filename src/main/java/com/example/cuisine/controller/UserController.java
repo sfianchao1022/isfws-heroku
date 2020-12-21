@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,4 +29,11 @@ public class UserController {
     public ResponseEntity<?> addUserDetailInformation(@RequestBody AddUserInfoRequest addUserInfoRequest) throws ParseException {
         return new ResponseEntity<>(userService.addUserInfo(addUserInfoRequest), HttpStatus.OK);
     }
+
+    @GetMapping(value = "/user/all")
+    public ResponseEntity<?> getAllUserDetailInformation(){
+        return new ResponseEntity<>(userService.getAllUser(), HttpStatus.OK);
+    }
+
+
 }

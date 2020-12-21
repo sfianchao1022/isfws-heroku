@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -54,4 +55,11 @@ public class RestaurantServiceImpl implements RestaurantService {
 
         return adminId + " add restaurant detail information success !";
     }
+
+    @Override
+    public List<Restaurant> getAllRestaurant(){
+        return restaurantRepository.findAll();
+    }
+
+
 }

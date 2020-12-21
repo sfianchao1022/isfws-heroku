@@ -27,4 +27,9 @@ public class RestaurantController {
     public ResponseEntity<?> addRestaurantDetailInformation(@PathVariable String adminId, @RequestBody RestaurantRequest restaurantRequest) throws ParseException {
         return new ResponseEntity<>(restaurantService.addRestaurantInfo(adminId, restaurantRequest), HttpStatus.OK);
     }
+
+    @GetMapping(value = "/restaurant/all")
+    public ResponseEntity<?> getAllRestaurantDetailInformation(){
+        return new ResponseEntity<>(restaurantService.getAllRestaurant(), HttpStatus.OK);
+    }
 }
