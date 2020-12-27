@@ -35,4 +35,6 @@ public class OwnerServiceImpl implements OwnerService {
     public List<Owner> getAllOwner(){
         return ownerRepository.findAll();
     }
+
+
 }
