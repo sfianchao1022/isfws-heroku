@@ -38,4 +38,9 @@ public class RestaurantController {
     public ResponseEntity<?> updateRestaurantDetailInformation(@PathVariable String restaurantId, @RequestBody UpdateRestaurantInfoRequest request){
         return new ResponseEntity<>(restaurantService.updateRestaurantInfo(restaurantId, request), HttpStatus.OK);
     }
+
+    @DeleteMapping(value = "/restaurant/delete/{restaurantId}")
+    public ResponseEntity<?> deleteRestaurantDetailInformation(@PathVariable String restaurantId){
+        return new ResponseEntity<>(restaurantService.deleteRestaurantInfo(restaurantId), HttpStatus.OK);
+    }
 }

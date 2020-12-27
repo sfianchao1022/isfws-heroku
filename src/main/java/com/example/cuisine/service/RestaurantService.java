@@ -14,4 +14,6 @@ public interface RestaurantService {
     List<Restaurant> getAllRestaurant();
 
     String updateRestaurantInfo(String restaurantId, UpdateRestaurantInfoRequest request);
+
+    String deleteRestaurantInfo(String restaurantId);
 }

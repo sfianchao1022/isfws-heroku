@@ -69,4 +69,14 @@ public class RestaurantServiceImpl implements RestaurantService {
         restaurantRepository.updateRestaurantInfoById(request.getName(), request.getImage(), request.getIntroduction(), request.getPromotion(), Long.valueOf(restaurantId));
         return restaurantId + " update success ! ";
     }
+
+    @Transactional
+    @Override
+    public String deleteRestaurantInfo(String restaurantId){
+        restaurantRepository.deleteById(Long.valueOf(restaurantId));
+        return restaurantId + " delete success ! ";
+    }
+
+
+
 }
