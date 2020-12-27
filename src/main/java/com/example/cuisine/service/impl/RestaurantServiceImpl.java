@@ -5,10 +5,12 @@ import com.example.cuisine.dao.model.Restaurant;
 import com.example.cuisine.dao.repository.OwnerRepository;
 import com.example.cuisine.dao.repository.RestaurantRepository;
 import com.example.cuisine.dto.request.RestaurantRequest;
+import com.example.cuisine.dto.request.UpdateRestaurantInfoRequest;
 import com.example.cuisine.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -61,5 +63,10 @@ public class RestaurantServiceImpl implements RestaurantService {
         return restaurantRepository.findAll();
     }
 
-
+    @Transactional
+    @Override
+    public String updateRestaurantInfo(String restaurantId, UpdateRestaurantInfoRequest request){
+        restaurantRepository.updateRestaurantInfoById(request.getName(), request.getImage(), request.getIntroduction(), request.getPromotion(), Long.valueOf(restaurantId));
+        return restaurantId + " update success ! ";
+    }
 }

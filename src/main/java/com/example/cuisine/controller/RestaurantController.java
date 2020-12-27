@@ -1,6 +1,7 @@
 package com.example.cuisine.controller;
 
 import com.example.cuisine.dto.request.RestaurantRequest;
+import com.example.cuisine.dto.request.UpdateRestaurantInfoRequest;
 import com.example.cuisine.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,5 +32,10 @@ public class RestaurantController {
     @GetMapping(value = "/restaurant/all")
     public ResponseEntity<?> getAllRestaurantDetailInformation(){
         return new ResponseEntity<>(restaurantService.getAllRestaurant(), HttpStatus.OK);
+    }
+
+    @PatchMapping(value = "/restaurant/update/{restaurantId}")
+    public ResponseEntity<?> updateRestaurantDetailInformation(@PathVariable String restaurantId, @RequestBody UpdateRestaurantInfoRequest request){
+        return new ResponseEntity<>(restaurantService.updateRestaurantInfo(restaurantId, request), HttpStatus.OK);
     }
 }
