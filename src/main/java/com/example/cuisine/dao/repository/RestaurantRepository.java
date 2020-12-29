@@ -13,4 +13,6 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
     @Query("update Restaurant r set r.name = ?1, r.image = ?2, r.introduction = ?3, r.promotion = ?4 where r.id = ?5")
     void updateRestaurantInfoById(String name, String image, String introduction, String promotion, Long restaurantId);
 
+
+
 }

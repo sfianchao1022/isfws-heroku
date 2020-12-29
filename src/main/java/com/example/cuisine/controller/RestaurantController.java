@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.text.ParseException;
 
 
-@Controller // This means that this class is a Controller
+@RestController // This means that this class is a Controller
 @RequestMapping(path="api/") // This means URL's start with /restaurant (after Application path)
 public class RestaurantController {
 
