@@ -18,8 +18,8 @@ public class SpringFoxConfig {
         return new Docket(DocumentationType.OAS_30)
                 .select()
                 .apis(RequestHandlerSelectors.any())
-//                .paths(PathSelectors.any())
-                .paths(PathSelectors.ant("/api/**"))
+                .paths(PathSelectors.any())
+//                .paths(PathSelectors.ant("/api/**"))
                 .build()
                 .apiInfo(apiInfo());
     }
@@ -27,7 +27,7 @@ public class SpringFoxConfig {
     private ApiInfo apiInfo() {
         return new ApiInfo(
                 "API Documentation",//標題
-                "Created By CHIU, YU-CHEN.",//描述
+                "Created By Chao, Shou-Feng.",//描述
                 "1.0",//版本
                 null,//服務條款網址
                 null,//contact (it's Object)
