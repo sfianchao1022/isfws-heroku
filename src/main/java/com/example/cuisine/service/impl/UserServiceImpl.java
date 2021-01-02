@@ -40,6 +40,4 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUser(){
         return userRepository.findAll();
     }
-
-
 }

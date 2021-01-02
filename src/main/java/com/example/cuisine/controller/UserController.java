@@ -31,6 +31,4 @@ public class UserController {
     public ResponseEntity<?> getAllUserDetailInformation(){
         return new ResponseEntity<>(userService.getAllUser(), HttpStatus.OK);
     }
-
-
 }
