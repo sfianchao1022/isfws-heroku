@@ -4,8 +4,10 @@ import com.example.cuisine.dao.model.Owner;
 import com.example.cuisine.dao.model.Restaurant;
 import com.example.cuisine.dao.repository.OwnerRepository;
 import com.example.cuisine.dao.repository.RestaurantRepository;
+import com.example.cuisine.dto.projection.RestaurantLocation;
 import com.example.cuisine.dto.request.RestaurantRequest;
 import com.example.cuisine.dto.request.UpdateRestaurantInfoRequest;
+import com.example.cuisine.dto.response.RestaurantLocationResponse;
 import com.example.cuisine.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,6 +44,7 @@ public class RestaurantServiceImpl implements RestaurantService {
             restaurant.setOwnerId(owner);
         } else {
             System.out.println("owner : " + adminId + " not found !");
+            return adminId + " add restaurant detail information failed !";
         }
 
         restaurant.setStartTime(restaurantRequest.getStartTime());
@@ -77,6 +80,16 @@ public class RestaurantServiceImpl implements RestaurantService {
         return restaurantId + " delete success ! ";
     }
 
+    @Override
+    public RestaurantLocationResponse getRestaurantInfoWithLocation(String region){
+        List<RestaurantLocation> restaurantList = restaurantRepository.findAllByLocationContaining(region);
+//        System.out.println(restaurantList.get(0));
+        return new RestaurantLocationResponse(restaurantList);
+    }
 
+    @Override
+    public List<Restaurant> getRestaurantInfoWithName(String name){
+        return restaurantRepository.findAllByNameContaining(name);
+    }
 
 }

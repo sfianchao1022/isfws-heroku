@@ -43,4 +43,15 @@ public class RestaurantController {
     public ResponseEntity<?> deleteRestaurantDetailInformation(@PathVariable String restaurantId){
         return new ResponseEntity<>(restaurantService.deleteRestaurantInfo(restaurantId), HttpStatus.OK);
     }
+
+    @GetMapping(value = "/restaurant/location")
+    public ResponseEntity<?> getRestaurantLocationWithRegion(@RequestParam String region){
+        return new ResponseEntity<>(restaurantService.getRestaurantInfoWithLocation(region), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/restaurant/search")
+    public ResponseEntity<?> getRestaurantDetailInformationWithName(@RequestParam String name){
+        return new ResponseEntity<>(restaurantService.getRestaurantInfoWithName(name), HttpStatus.OK);
+    }
+
 }
