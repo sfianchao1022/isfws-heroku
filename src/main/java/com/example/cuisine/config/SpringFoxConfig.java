@@ -26,7 +26,7 @@ public class SpringFoxConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "cuisine API Documentation",//標題
+                "isfws fianl project--cuisine API Documentation",//標題
                 "Created By Chao, Shou-Feng.",//描述
                 "1.0",//版本
                 null,//服務條款網址
