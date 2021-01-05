@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.text.ParseException;
 
 @RestController // This means that this class is a Controller
-@RequestMapping(path="api/") // This means URL's start with /restaurant (after Application path)
+@RequestMapping(path="api/") // This means URL's start with /user (after Application path)
 public class UserController {
 
     private final UserService userService;

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.text.ParseException;
 
 @RestController // This means that this class is a Controller
-@RequestMapping(path="api/") // This means URL's start with /restaurant (after Application path)
+@RequestMapping(path="api/") // This means URL's start with /owner (after Application path)
 public class OwnerController {
 
     private final OwnerService ownerService;
@@ -33,5 +33,7 @@ public class OwnerController {
     public ResponseEntity<?> getAllOwnerDetailInformation(){
         return new ResponseEntity<>(ownerService.getAllOwner(), HttpStatus.OK);
     }
+
+
 
 }
